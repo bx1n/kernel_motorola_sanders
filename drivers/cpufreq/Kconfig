@@ -129,6 +129,74 @@ config CPU_FREQ_DEFAULT_GOV_SCHED
 	  Use the CPUfreq governor 'sched' as default. This scales
 	  cpu frequency using CPU utilization estimates from the
 	  scheduler.
+	  Use the CPUFreq governor 'chill' as default. This allows
+	  you to get a full dynamic frequency capable system by simply
+	  loading your cpufreq low-level hardware driver.
+	  Be aware that not all cpufreq drivers support the conservative
+	  governor. If unsure have a look at the help section of the
+	  driver. Fallback governor will be the interactive governor.
+
+config CPU_FREQ_DEFAULT_GOV_IMPULSE
+	bool "impulse"
+	select CPU_FREQ_GOV_IMPULSE
+	help
+	  Use the CPUFreq governor 'impulse' as default
+
+config CPU_FREQ_DEFAULT_GOV_DARKNESS
+ 	bool "darkness"
+ 	select CPU_FREQ_GOV_DARKNESS
+
+config CPU_FREQ_DEFAULT_GOV_ZZMOOVE
+ 	bool "zzmoove"
+ 	select CPU_FREQ_GOV_ZZMOOVE
+ 	select CPU_FREQ_GOV_PERFORMANCE
+ 	help
+ 	  Use the CPUFreq governor 'zzmoove' as default.
+
+config CPU_FREQ_DEFAULT_GOV_WHEATLEY
+ 	bool "wheatley"
+ 	select CPU_FREQ_GOV_WHEATLEY
+ 	select CPU_FREQ_GOV_PERFORMANCE
+ 	---help---
+ 	  Use the CPUFreq governor 'wheatley' as default.
+
+config CPU_FREQ_DEFAULT_GOV_INTELLIACTIVE
+	bool "intelliactive"
+	select CPU_FREQ_GOV_PEGASUSQ
+	help
+	Use the CPUFreq governor 'intelliactive' as default.
+
+config CPU_FREQ_DEFAULT_GOV_INTERACTIVE_PRO
+	bool "interactive_pro"
+	select CPU_FREQ_GOV_INTERACTIVE_PRO
+	help
+	Use the CPUFreq governor 'interactive_pro' as default.
+
+config CPU_FREQ_DEFAULT_GOV_SMARTMAX
+ 	bool "smartmax"
+ 	select CPU_FREQ_GOV_SMARTMAX
+ 	help
+ 	  Use the CPUFreq governor 'smartmax' as default
+
+config CPU_FREQ_DEFAULT_GOV_LAGFREE
+	bool "lagfree"
+	select CPU_FREQ_GOV_LAGFREE
+	select CPU_FREQ_GOV_PERFORMANCE
+
+config CPU_FREQ_DEFAULT_GOV_ADAPTIVE
+	bool "adaptive"
+	select CPU_FREQ_GOV_ADAPTIVE
+	---help---
+	'adaptive' - This driver adds a dynamic cpufreq policy governor
+	designed for latency-sensitive workloads and also for demanding
+	performance.
+
+config CPU_FREQ_DEFAULT_GOV_CULTIVATION
+	bool "cultivation"
+	select CPU_FREQ_GOV_CULTIVATION
+	help
+	Use the CPUFreq governor 'cultivation' as default.
+
 endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
